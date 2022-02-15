@@ -33,16 +33,17 @@ services:
       - dev
     links:
       - php
-  mongo:
-    image: mongo
-    restart: always
+  mongodb:
+    image : mongo
+    container_name: mongodb
     environment:
-      MONGO_INITDB_DATABASE: ratdb
-      MONGO_INITDB_ROOT_USERNAME: rat
-      MONGO_INITDB_ROOT_PASSWORD: admin
+      - PUID=1000
+      - PGID=1000
     volumes:
       - db-data:/data/db
-
+    ports:
+      - 27017:27017
+    restart: unless-stopped
 
 networks:
   dev:

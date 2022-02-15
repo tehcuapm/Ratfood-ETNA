@@ -8,6 +8,8 @@ RUN apt-get update && apt-get install -y \
     libzip-dev
 RUN docker-php-ext-install zip exif pcntl
 CMD composer install ; composer update ; php-fpm -R
+RUN pecl install mongodb \
+    && echo "extension=mongodb.so" > $PHP_INI_DIR/conf.d/mongo.ini 
 RUN chown -R root:www-data .
 RUN chmod 777 -R .
 RUN groupadd -g 1000 www

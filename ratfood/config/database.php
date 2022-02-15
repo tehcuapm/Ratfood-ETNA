@@ -36,9 +36,13 @@ return [
     'connections' => [
         'mongodb' => [
             'driver' => 'mongodb',
-            'dsn' => env('DB_URI', 'mongodb+srv://rat:admin@127.0.0.1:27017'),
-            'database' => 'ratfoodb',
-        ],
+            'host' => env('DB_HOST','localhost'),
+            'port' => env('DB_PORT',27017),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
+            'charset' => 'utf-8'
+            ],
 
         'sqlite' => [
             'driver' => 'sqlite',

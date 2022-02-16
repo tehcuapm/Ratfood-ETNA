@@ -25,9 +25,7 @@ class User extends Authenticatable
         'username',
         'name',
         'firstname',
-        'email',
         'age',
-        'password',
     ];
 
     /**
@@ -39,12 +37,13 @@ class User extends Authenticatable
         'password',
     ];
 
-    public function getJWTIdentifier() {
+    public function getJWTIdentifier()
+    {
         return $this->getKey();
     }
 
-    public function getJWTCustomClaims() {
+    public function getJWTCustomClaims()
+    {
         return [];
     }
-
 }

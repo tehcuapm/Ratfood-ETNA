@@ -17,11 +17,3 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group([
-    'middleware' => 'api',
-], function ($router) {
-    Route::post('/register', [AuthController::class, 'register']);
-    Route::post('/auth', [AuthController::class, 'login']);
-    Route::get('/users', [AuthController::class, 'allUsers']);
-    Route::post('/sign_out', [AuthController::class, 'sign_out']);
-});

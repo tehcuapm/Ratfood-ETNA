@@ -34,8 +34,8 @@ services:
     links:
       - php
   mongodb:
-    image : mongo
-    container_name: mongodb
+    image : mongo:latest
+    container_name: api_db
     environment:
       - PUID=1000
       - PGID=1000
@@ -44,6 +44,8 @@ services:
     ports:
       - "27017:27017"
     restart: unless-stopped
+    networks:
+      - dev
 
 networks:
   dev:

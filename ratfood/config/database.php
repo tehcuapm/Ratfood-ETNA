@@ -41,6 +41,9 @@ return [
             'database' => env('DB_DATABASE', 'homestead'),
             'username' => env('DB_USERNAME', 'homestead'),
             'password' => env('DB_PASSWORD', 'secret'),
+            'options' => [
+                'db_options'    => ["serverSelectionTryOnce" => FALSE, "authSource" => "admin"]
+            ],
         ],
 
         'sqlite' => [

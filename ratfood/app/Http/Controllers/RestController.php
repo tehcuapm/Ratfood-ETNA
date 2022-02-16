@@ -54,8 +54,16 @@ class RestController extends Controller
             return response()->json($req->errors()->toJson(), 400);
         }
 
-        $test = Restaurant::all()->where('_id', $id);
-        dd($test);
+        $test = Restaurant::where("_id", '=', $id)->update([
+            "name" => $request['name'],
+            "description" => $request['description'],
+            "grade" => $request['grade'],
+            "localization" => $request['localization'],
+            "phone_number" => $request['phone_number'],
+            "website" => $request['website'],
+            "hours" => $request['hours'],
+        ]);
+
 
         return response()->json([
             'message' => 'Rest changed',

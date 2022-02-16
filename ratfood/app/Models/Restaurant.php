@@ -2,13 +2,20 @@
 
 namespace App\Models;
 
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+use Tymon\JWTAuth\Contracts\JWTSubject;
+use Jenssegers\Mongodb\Eloquent\Model;
+
 
 class Restaurant extends Model
 {
-    use HasFactory;
+    use HasApiTokens, HasFactory, Notifiable;
 
+    protected $connection = 'mongodb';
     protected $fillable = [
         "name",
         "description",
@@ -18,4 +25,14 @@ class Restaurant extends Model
         "website",
         "hours"
     ];
+
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
 }

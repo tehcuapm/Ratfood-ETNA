@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RestController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 /*
@@ -21,6 +22,7 @@ Route::group([
     Route::post('/auth', [AuthController::class, 'login']);
     Route::get('/users', [AuthController::class, 'allUsers']);
     Route::post('/sign_out', [AuthController::class, 'sign_out']);
-    Route::get('/restaurants', [AuthController::class, 'allRestaurants']);
-    Route::post('/restaurant', [AuthController::class, 'createRestaurant']);
+    Route::get('/restaurants', [RestController::class, 'allRestaurants']);
+    Route::post('/restaurant', [RestController::class, 'createRestaurant']);
+    Route::put('/restaurant/{id}', [RestController::class, 'putRestaurant']);
 });

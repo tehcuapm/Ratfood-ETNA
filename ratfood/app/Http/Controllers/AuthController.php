@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Models\User;
-use App\Models\Restaurant;
 
 class AuthController extends Controller
 {
@@ -69,14 +68,6 @@ class AuthController extends Controller
     }
 
     /**
-     * Create Restaurant
-     */
-    public function createRestaurant()
-    {
-        //
-    }
-
-    /**
      * Sign out
      */
     public function sign_out()
@@ -99,14 +90,6 @@ class AuthController extends Controller
     public function allUsers()
     {
         return response()->json(User::all());
-    }
-
-    /**
-     * Restaurants
-     */
-    public function allRestaurants()
-    {
-        return response()->json(Restaurant::all());
     }
 
     /**

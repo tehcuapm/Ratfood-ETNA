@@ -3,7 +3,6 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,16 +13,6 @@ use App\Http\Controllers\AuthController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::group([
-    'middleware' => 'api',
-], function ($router) {
-    Route::post('/register', [AuthController::class, 'register']);
-    Route::post('/auth', [AuthController::class, 'login']);
-    Route::get('/users', [AuthController::class, 'allUsers']);
-    Route::post('/sign_out', [AuthController::class, 'sign_out']);
-});
-
 
 Route::group([
     'middleware' => 'api',

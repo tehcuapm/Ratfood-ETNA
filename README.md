@@ -4,13 +4,13 @@
 The project need Docker in your local machine for launch, so before running the project you need to install it.
 
 ### Install Docker
-#### Linux
+#### - Linux
      > sudo apt install docker
      > sudo apt install docker-compose
      > sudo reboot
 
-#### Windows
+#### - Windows
     - Download Docker windows installer: https://download.docker.com/win/beta/InstallDocker.msi
 
 
-After the Docker's installation, you should put your **.env** in laravel folder
+After Docker's installation, you should put your **.env** in laravel folder

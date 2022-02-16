@@ -8,6 +8,71 @@
       <sourceFolder url="file://$MODULE_DIR$/ratfood/tests" isTestSource="true" packagePrefix="Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+<<<<<<< HEAD
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/psr/http-client" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/psr/http-message" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/psr/http-factory" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/psr/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/opis/closure" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/ramsey/collection" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/ramsey/uuid" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/graham-campbell/result-type" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/nette/schema" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/nette/utils" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/nunomaduro/collision" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/namshi/jose" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/tomfordrumm/jwt-auth" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/voku/portable-ascii" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/mockery/mockery" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/hamcrest/hamcrest-php" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/laravel/tinker" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/laravel/framework" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/laravel/sail" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/laravel/sanctum" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/laravel/serializable-closure" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/swiftmailer/swiftmailer" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/jean85/pretty-package-versions" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/nikic/php-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/fruitcake/laravel-cors" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/phpunit/php-timer" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/phpunit/php-file-iterator" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/phpunit/php-text-template" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/phpoption/phpoption" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/phpunit/php-invoker" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/phpunit/php-code-coverage" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/phpunit/phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/league/flysystem" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/myclabs/deep-copy" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/league/config" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/league/commonmark" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/league/mime-type-detection" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/ralouphie/getallheaders" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/theseer/tokenizer" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/sebastian/global-state" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/facade/ignition-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/sebastian/complexity" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/facade/flare-client-php" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/sebastian/recursion-context" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/facade/ignition" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/sebastian/object-enumerator" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/sebastian/object-reflector" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/sebastian/cli-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/sebastian/lines-of-code" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/nesbot/carbon" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/sebastian/diff" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/sebastian/type" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/sebastian/version" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/sebastian/comparator" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/tijsverkoyen/css-to-inline-styles" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/sebastian/environment" />
+=======
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/egulias/email-validator" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/asm89/stack-cors" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/graham-campbell/result-type" />
@@ -74,16 +139,23 @@
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/sebastian/environment" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/tijsverkoyen/css-to-inline-styles" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/league/mime-type-detection" />
+>>>>>>> add1c2ca841f2eba9e87ec451481fed1bde385b4
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/sebastian/exporter" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/sebastian/code-unit" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/sebastian/resource-operations" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/sebastian/code-unit-reverse-lookup" />
+<<<<<<< HEAD
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/dragonmantank/cron-expression" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/doctrine/inflector" />
+=======
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/facade/ignition-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/facade/flare-client-php" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/facade/ignition" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/dragonmantank/cron-expression" />
+>>>>>>> add1c2ca841f2eba9e87ec451481fed1bde385b4
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/phar-io/manifest" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/phar-io/version" />
@@ -95,16 +167,30 @@
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/service-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/mime" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/polyfill-iconv" />
+<<<<<<< HEAD
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/var-dumper" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/vlucas/phpdotenv" />
+=======
+>>>>>>> add1c2ca841f2eba9e87ec451481fed1bde385b4
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/polyfill-intl-idn" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/polyfill-php80" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/polyfill-php81" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/routing" />
+<<<<<<< HEAD
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/css-selector" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/error-handler" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/polyfill-intl-grapheme" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/event-dispatcher-contracts" />
+=======
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/event-dispatcher" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/css-selector" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/polyfill-ctype" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/event-dispatcher-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/polyfill-intl-grapheme" />
+>>>>>>> add1c2ca841f2eba9e87ec451481fed1bde385b4
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/console" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/process" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/polyfill-intl-normalizer" />
@@ -115,6 +201,22 @@
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/translation" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/polyfill-mbstring" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/http-foundation" />
+<<<<<<< HEAD
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/mongodb/mongodb" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/translation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/filp/whoops" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/phpspec/prophecy" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/jenssegers/mongodb" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/fakerphp/faker" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/psy/psysh" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/dflydev/dot-access-data" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/lcobucci/jwt" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/asm89/stack-cors" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/egulias/email-validator" />
+      <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/brick/math" />
+=======
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/symfony/translation-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/mongodb/mongodb" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/jenssegers/mongodb" />
@@ -125,6 +227,7 @@
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/filp/whoops" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/ratfood/vendor/dflydev/dot-access-data" />
+>>>>>>> add1c2ca841f2eba9e87ec451481fed1bde385b4
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -54,7 +54,7 @@ class RestController extends Controller
             return response()->json($req->errors()->toJson(), 400);
         }
 
-        $test = Restaurant::where("_id", '=', $id)->update([
+        Restaurant::where("_id", '=', $id)->update([
             "name" => $request['name'],
             "description" => $request['description'],
             "grade" => $request['grade'],
@@ -69,6 +69,25 @@ class RestController extends Controller
             'message' => 'Rest changed',
         ], 200);
     }
+
+    /**
+     * Delete Restaurants
+     */
+    public function deleteRestaurant($id)
+    {
+        $rest = Restaurant::where("_id", '=', $id)->delete();
+
+        if ($rest) {
+            return response()->json([
+                'message' => 'Rest deleted',
+            ], 200);
+        } else {
+            return response()->json([
+                'message' => 'Rest do not exist',
+            ], 400);
+        }
+    }
+
 
     /**
      * Restaurants

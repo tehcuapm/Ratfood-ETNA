@@ -25,4 +25,5 @@ Route::group([
     Route::get('/restaurants', [RestController::class, 'allRestaurants']);
     Route::post('/restaurant', [RestController::class, 'createRestaurant']);
     Route::put('/restaurant/{id}', [RestController::class, 'putRestaurant']);
+    Route::delete('/restaurant/{id}', [RestController::class, 'deleteRestaurant']);
 });

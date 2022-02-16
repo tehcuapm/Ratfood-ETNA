@@ -10,9 +10,15 @@ class Menu extends Model
 {
     use HasFactory;
 
+    protected $connection = 'mongodb';
     protected $fillable = [
         "name",
         "description",
         "price"
     ];
+
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
 }

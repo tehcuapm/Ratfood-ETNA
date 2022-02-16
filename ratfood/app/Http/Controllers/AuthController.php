@@ -6,19 +6,21 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Models\User;
-
+use App\Models\Restaurant;
 
 class AuthController extends Controller
 {
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->middleware('api', ['except' => ['auth', 'register']]);
     }
 
     /**
      * Get a JWT via given credentials.
      */
-    public function login(Request $request){
+    public function login(Request $request)
+    {
         $req = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required|string|min:5',
@@ -28,7 +30,7 @@ class AuthController extends Controller
             return response()->json($req->errors(), 422);
         }
 
-        if (! $token = auth()->attempt($req->validated())) {
+        if (!$token = auth()->attempt($req->validated())) {
             return response()->json(['Auth error' => 'Unauthorized'], 401);
         }
 
@@ -40,17 +42,18 @@ class AuthController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function register(Request $request) {
+    public function register(Request $request)
+    {
         $req = Validator::make($request->all(), [
-            'username' =>'required|string|unique:users',
-            'firstname' =>'required|string',
+            'username' => 'required|string|unique:users',
+            'firstname' => 'required|string',
             'name' => 'required|string|between:2,100',
             'email' => 'required|string|email|max:100|unique:users',
             'password' => 'required|string|confirmed|min:6',
-            'age' =>'required|integer'
+            'age' => 'required|integer'
         ]);
 
-        if($req->fails()){
+        if ($req->fails()) {
             return response()->json($req->errors()->toJson(), 400);
         }
 
@@ -65,11 +68,19 @@ class AuthController extends Controller
         ], 201);
     }
 
+    /**
+     * Create Restaurant
+     */
+    public function createRestaurant()
+    {
+        //
+    }
 
     /**
      * Sign out
      */
-    public function sign_out() {
+    public function sign_out()
+    {
         auth()->logout();
         return response()->json(['message' => 'User logged out']);
     }
@@ -77,21 +88,32 @@ class AuthController extends Controller
     /**
      * Token refresh
      */
-    public function refresh() {
+    public function refresh()
+    {
         return $this->generateToken(auth()->refresh());
     }
 
     /**
      * User
      */
-    public function allUsers() {
+    public function allUsers()
+    {
         return response()->json(User::all());
+    }
+
+    /**
+     * Restaurants
+     */
+    public function allRestaurants()
+    {
+        return response()->json(Restaurant::all());
     }
 
     /**
      * Generate token
      */
-    protected function generateToken($token){
+    protected function generateToken($token)
+    {
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',

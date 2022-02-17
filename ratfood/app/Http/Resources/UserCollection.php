@@ -19,7 +19,8 @@ class UserCollection extends ResourceCollection
             'username' =>$this->username,
             'firstname' =>$this->firstname,
             'name' => $this->name,
-            'age' =>$this->age                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+            'age' =>$this->age       
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
         ];
     }
 }

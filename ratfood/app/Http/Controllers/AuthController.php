@@ -21,7 +21,7 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'username' => 'required|string',
+            'username' => 'required',
             'password' => 'required|string|min:6',
         ]);
 
@@ -56,10 +56,14 @@ class AuthController extends Controller
             return response()->json($req->errors()->toJson(), 400);
         }
 
-        $user = User::create(array_merge(
-            $req->validated(),
-            ['password' => bcrypt($request->password)]
-        ));
+        $user = User::create([
+            'username' => $request->username,
+            'name' => $request->name,
+            'firstname' => $request->firstname,
+            'email' => $request->email,
+            'age' => $request->age,
+            'password' => bcrypt($request->password)
+        ]);
 
         return response()->json([
             'message' => 'User signed up',
@@ -102,5 +106,14 @@ class AuthController extends Controller
             'token_type' => 'bearer',
             'expires_in' => auth()->factory()->getTTL() * 60
         ]);
+    }
+    /**
+     * Get the guard to be used during authentication.
+     *
+     * @return \Illuminate\Contracts\Auth\Guard
+     */
+    public function guard()
+    {
+        return Auth::guard('api');
     }
 }

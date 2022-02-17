@@ -60,18 +60,16 @@ class MenuController extends Controller
             return response()->json($req->errors()->toJson(), 400);
         }
 
-        $test = Menu::all()->where('_id', "=", $id_menu);
-
-
-        dd(Menu::all()->where('id_rest', "=", $id)->where('_id', '=', $id_menu));
-        Menu::all()->where('id_rest', "=", $id)->where('_id', '=', $id_menu)->each(function ($element) {
-            dd($element);
-        });
-        // ->update([
-        //     "name" => $request['name'],
-        //     "description" => $request['description'],
-        //     "price" => $request['price'],
-        // ]);
+        $menus = Menu::all();
+        foreach($menus as $item) {
+            if($item["_id"] == $id_menu) {
+                $item->update([
+                    "name" => $request['name'],
+                    "description" => $request['description'],
+                    "price" => $request['price'],
+                ]);
+            };
+        }
 
         return response()->json([
             'message' => 'Menu changed',
@@ -81,11 +79,17 @@ class MenuController extends Controller
     /**
      * Delete menu
      */
-    public function deleteMenu($id_menu)
+    public function deleteMenu($id, $id_menu)
     {
-        $rest = Menu::where("_id", '=', $id_menu)->delete();
-
-        if ($rest) {
+        $rest = Menu::all();
+        $is_sup = false;
+        foreach($rest as $item) {
+            if ($item['_id'] == $id_menu) {
+                $item->delete();
+                $is_sup = true;
+            }
+        }
+        if ($is_sup) {
             return response()->json([
                 'message' => 'Rest deleted',
             ], 200);

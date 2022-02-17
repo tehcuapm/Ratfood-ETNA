@@ -54,7 +54,6 @@ class RestController extends Controller
             return response()->json($req->errors()->toJson(), 400);
         }
 
-        dd(Restaurant::where("_id", '=', $id));
         Restaurant::where("_id", '=', $id)->update([
             "name" => $request['name'],
             "description" => $request['description'],

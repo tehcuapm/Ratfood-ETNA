@@ -17,8 +17,7 @@ class Menu extends Model
         "price"
     ];
 
-    public function getJWTIdentifier()
-    {
-        return $this->getKey();
-    }
+    protected $hidden = [
+        "_id"
+    ];
 }

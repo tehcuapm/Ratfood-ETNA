@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RestController;
+use App\Http\Controllers\MenuController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 /*
@@ -26,4 +27,5 @@ Route::group([
     Route::post('/restaurant', [RestController::class, 'createRestaurant']);
     Route::put('/restaurant/{id}', [RestController::class, 'putRestaurant']);
     Route::delete('/restaurant/{id}', [RestController::class, 'deleteRestaurant']);
+    Route::get('/restaurant/{id}/menus', [MenuController::class, 'allMenu']);
 });

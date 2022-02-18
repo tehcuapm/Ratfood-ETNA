@@ -14,3 +14,8 @@ The project need Docker in your local machine for launch, so before running the 
 
 
 After Docker's installation, you should put your **.env** in laravel folder
+
+To launch the project do : 
+```
+cd docker && chmod +x init.sh && ./init.sh
+```

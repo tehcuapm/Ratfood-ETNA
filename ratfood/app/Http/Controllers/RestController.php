@@ -64,7 +64,6 @@ class RestController extends Controller
             "hours" => $request['hours'],
         ]);
 
-
         return response()->json([
             'message' => 'Rest changed',
         ], 200);

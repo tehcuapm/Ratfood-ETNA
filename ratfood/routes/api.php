@@ -28,4 +28,7 @@ Route::group([
     Route::put('/restaurant/{id}', [RestController::class, 'putRestaurant']);
     Route::delete('/restaurant/{id}', [RestController::class, 'deleteRestaurant']);
     Route::get('/restaurant/{id}/menus', [MenuController::class, 'allMenu']);
+    Route::post('/restaurant/{id}/menu', [MenuController::class, 'createMenu']);
+    Route::put('/restaurant/{id}/menu/{id_menu}', [MenuController::class, 'updateMenu']);
+    Route::delete('/restaurant/{id}/menu/{id_menu}', [MenuController::class, 'deleteMenu']);
 });

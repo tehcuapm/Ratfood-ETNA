@@ -2,22 +2,23 @@
 
 namespace App\Models;
 
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations;
+use Jenssegers\Mongodb\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+use Tymon\JWTAuth\Contracts\JWTSubject;
+use Jenssegers\Mongodb\Eloquent\Model;
 
 class Menu extends Model
 {
-    use HasFactory;
+    use HasApiTokens, HasFactory, Notifiable;
 
     protected $connection = 'mongodb';
     protected $fillable = [
         "name",
         "description",
-        "price"
-    ];
-
-    protected $hidden = [
-        "_id"
+        "price",
+        "id_rest",
     ];
 }

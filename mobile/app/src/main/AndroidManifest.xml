@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ratfoodapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,10 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RatFoodApp">
         <activity
-            android:name=".RatActivity"
-            android:exported="true"
-            android:label="@string/title_activity_rat"
-            android:theme="@style/Theme.RatFoodApp.NoActionBar">
+            android:name=".views.TestApi"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -8,6 +8,18 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.RatFoodApp" />
+        android:theme="@style/Theme.RatFoodApp">
+        <activity
+            android:name=".RatActivity"
+            android:exported="true"
+            android:label="@string/title_activity_rat"
+            android:theme="@style/Theme.RatFoodApp.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
 
 </manifest>

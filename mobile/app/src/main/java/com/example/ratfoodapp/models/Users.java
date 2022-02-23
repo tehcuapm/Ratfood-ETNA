@@ -2,11 +2,11 @@ package com.example.ratfoodapp.models;
 
 public class Users {
 
-    int id,age;
-    String username,firstname,name;
+    int age;
+    String username,firstname,name,id;
 
-    public void userModel(int id, int age, String username, String firstname,String name){
-        this.id = id;
+    public void userModels(String _id, int age, String username, String firstname,String name){
+        this.id = _id;
         this.age = age;
         this.username = username;
         this.name = name;
@@ -14,6 +14,6 @@ public class Users {
     }
 
     public String getUsername(){
-        return this.username;
+        return this.id;
     }
 }

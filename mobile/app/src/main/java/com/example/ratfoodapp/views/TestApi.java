@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.ratfoodapp.R;
+import com.example.ratfoodapp.api.ApiBuilder;
 import com.example.ratfoodapp.api.UsersApi;
 import com.example.ratfoodapp.models.Users;
 
@@ -14,9 +15,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.GET;
+
 
 public class TestApi extends AppCompatActivity {
 
@@ -30,13 +29,8 @@ public class TestApi extends AppCompatActivity {
 
         tv = (TextView) findViewById(R.id.tv);
 
+        UsersApi usersApi = ApiBuilder.builderAPI().create(UsersApi.class);
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(url)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        UsersApi usersApi = retrofit.create(UsersApi.class);
         Call<List<Users>> call=usersApi.getUsers();
 
         call.enqueue(new Callback<List<Users>>() {
@@ -54,6 +48,8 @@ public class TestApi extends AppCompatActivity {
                 tv.append("ERREUR: "+t);
 
             }
+
+
         });
 
 

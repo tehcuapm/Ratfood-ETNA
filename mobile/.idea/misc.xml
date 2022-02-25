@@ -10,7 +10,11 @@
         <entry key="app/src/main/res/drawable/logo_profile_background.xml" value="0.154" />
         <entry key="app/src/main/res/drawable/logo_profile_foreground.xml" value="0.154" />
         <entry key="app/src/main/res/layout/activity_rat.xml" value="0.35625" />
+<<<<<<< HEAD
         <entry key="app/src/main/res/layout/activity_test_api.xml" value="0.25" />
+=======
+        <entry key="app/src/main/res/layout/activity_test_api.xml" value="0.18177083333333333" />
+>>>>>>> main
         <entry key="app/src/main/res/layout/content_rat.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/content_restaurants.xml" value="0.7661290322580645" />
         <entry key="app/src/main/res/layout/fragment_footer.xml" value="0.25" />
@@ -26,5 +30,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.18177083333333333" />
+      </ProjectState>
+    </option>
   </component>
 </project>

@@ -21,7 +21,7 @@ import retrofit2.http.GET;
 public class TestApi extends AppCompatActivity {
 
     TextView tv;
-    String url = "https://ratfood.loca.lt/";
+    String url = "https://galeriens.loca.lt/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

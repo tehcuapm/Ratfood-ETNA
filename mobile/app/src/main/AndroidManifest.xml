@@ -13,8 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RatFoodApp">
         <activity
-            android:name=".views.TestApi"
-            android:exported="true">
+            android:name=".views.RestaurantsActivity"
+            android:exported="true"
+            android:label="RestaurantsActivity"
+            android:theme="@style/Theme.RatFoodApp.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

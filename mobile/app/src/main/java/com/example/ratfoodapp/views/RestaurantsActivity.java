@@ -29,7 +29,7 @@ public class RestaurantsActivity extends AppCompatActivity {
         btn_rest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(RestaurantsActivity.this, RestaurantsActivity.class));
+                startActivity(new Intent(RestaurantsActivity.this, TestApi.class));
             }
         });
 

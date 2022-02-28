@@ -2,21 +2,21 @@
     <string name="app_name">RatFoodApp</string>
     <string name="title_activity_rat">RatActivity</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_test_api">TestAPI</string>
 
     <!--String for footer-->
     <string name="footer_l_button_text">Profil</string>
     <string name="footer_r_button_text">Restaurants</string>
 
+    <string name="title_activity_main">MainActivity</string>
 
     <string name="title_activity_restaurants">RestaurantsActivity</string>
-    <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_profil">Profil</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_change">ChangeActivity</string>
+
+    <!--NAV STRINGS-->
+    <string name="label_fragment_restaurant">RestaurantFragment</string>
+    <string name="label_fragment_login">LoginFragment</string>
 </resources>

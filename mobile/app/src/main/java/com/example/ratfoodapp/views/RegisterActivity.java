@@ -16,20 +16,23 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.ratfoodapp.databinding.ProfilLayoutBinding;
+import com.example.ratfoodapp.databinding.ActivityRegisterBinding;
 
-public class Profil extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
+
+    private AppBarConfiguration appBarConfiguration;
+    private ActivityRegisterBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.profil_layout);
+        setContentView(R.layout.activity_register);
 
         Button btn_rest = (Button) findViewById(R.id.btn_restaurant);
         btn_rest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Profil.this, RestaurantsActivity.class));
+                startActivity(new Intent(RegisterActivity.this, RestaurantsActivity.class));
             }
         });
 
@@ -37,9 +40,10 @@ public class Profil extends AppCompatActivity {
         btn_prof.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Profil.this, LoginActivity.class));
+                startActivity(new Intent(RegisterActivity.this, Profil.class));
             }
         });
     }
+
 
 }

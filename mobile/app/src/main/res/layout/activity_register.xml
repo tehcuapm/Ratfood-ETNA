@@ -6,13 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".views.LoginActivity">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="LOGIN YOUR RACE"
-        android:textAlignment="center">
 
-    </TextView>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,7 +25,43 @@
                 android:id="@+id/input_username"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="Username"/>
+                android:hint="Nom d'utilisateur"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+
+            <EditText
+                android:id="@+id/input_firstname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Prénom"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+
+            <EditText
+                android:id="@+id/input_lastname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Nom"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+
+            <EditText
+                android:id="@+id/input_email"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Email"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -43,66 +73,22 @@
                 android:id="@+id/input_password"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="Password (more than 6 characters)"/>
+                android:hint="Mot de passe"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/login_btn"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginTop="32dp"
-            android:text="Login"/>
 
-        <TextView
-            android:id="@+id/reset_pass_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Forgot password?"
-            android:layout_gravity="center"
-            android:clickable="true"
-            android:focusable="true" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="16dp">
 
-            <TextView
-                android:id="@+id/tvText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:text="OR"
-                android:textColor="#000000"/>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="16dp"
-                android:layout_toLeftOf="@id/tvText"
-                android:background="#000000" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="16dp"
-                android:layout_toRightOf="@id/tvText"
-                android:background="#000000" />
-
-        </RelativeLayout>
 
         <Button
-            android:id="@+id/signup_btn"
+            android:id="@+id/register_btn"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginTop="16dp"
-            android:text="I don't have an account" />
+            android:text="Register"/>
 
     </LinearLayout>
     <RelativeLayout

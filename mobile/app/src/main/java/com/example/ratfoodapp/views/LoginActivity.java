@@ -12,8 +12,11 @@ import android.widget.Toast;
 import com.example.ratfoodapp.R;
 import com.example.ratfoodapp.api.ApiBuilder;
 import com.example.ratfoodapp.api.UsersApi;
+import com.example.ratfoodapp.models.Users;
 
 import org.json.JSONObject;
+
+import java.util.List;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -54,16 +57,10 @@ public class LoginActivity extends AppCompatActivity {
                     try {
                         String result = response.body().string();
                         JSONObject obj = new JSONObject(result);
-                        String getstatus = obj.getString("status");
+                        String getstatus = obj.getString("user");
+                        createUser(obj);
+                        Toast.makeText(getApplicationContext(), getstatus, Toast.LENGTH_LONG).show();
 
-
-                        if (getstatus.equals("false")) {
-                            String error = obj.getString("error");
-                            Toast.makeText(getApplicationContext(), "" + error, Toast.LENGTH_LONG).show();
-                        } else if (getstatus.equals("true")) {
-                            String getUsername = obj.getString("username");
-                            Toast.makeText(getApplicationContext(), getUsername, Toast.LENGTH_LONG).show();
-                        }
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -79,4 +76,19 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+
+    public void createUser(JSONObject obj){
+        try{
+            String username = obj.getString("username");
+            String name = obj.getString("name");
+            String firstname = obj.getString("firstname");
+            String _id = obj.getString("_id");
+            int age = obj.getInt("age");
+
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
 }

@@ -8,10 +8,10 @@ import java.util.Map;
 
 public class Users {
 
-    int age;
-    String username,firstname,name,_id;
+     int age;
+     String username,firstname,name,_id;
 
-    public void userModels(String _id, int age, String username, String firstname,String name){
+    public Users (String _id, int age, String username, String firstname,String name){
         this._id = _id;
         this.age = age;
         this.username = username;

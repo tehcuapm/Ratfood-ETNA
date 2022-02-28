@@ -10,6 +10,7 @@
         <entry key="app/src/main/res/drawable/logo_profile_background.xml" value="0.154" />
         <entry key="app/src/main/res/drawable/logo_profile_foreground.xml" value="0.154" />
         <entry key="app/src/main/res/drawable/logo_search_background.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.2647058823529412" />
         <entry key="app/src/main/res/layout/activity_rat.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/activity_test_api.xml" value="0.25" />
         <entry key="app/src/main/res/layout/content_rat.xml" value="0.35625" />

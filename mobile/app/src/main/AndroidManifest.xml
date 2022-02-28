@@ -17,7 +17,12 @@
             android:name=".views.Profil"
             android:exported="false"
             android:label="@string/title_activity_profil"
-            android:theme="@style/Theme.RatFoodApp.NoActionBar" />
+            android:theme="@style/Theme.RatFoodApp.NoActionBar">
+        <activity
+            android:name=".views.LoginActivity"
+            android:exported="true"
+            android:label="LoginActivity"
+            android:theme="@style/Theme.RatFoodApp.NoActionBar">
         <activity
             android:name=".views.RestaurantsActivity"
             android:exported="true"
@@ -28,6 +33,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".views.TestApi"
+            android:exported="false">
+
         </activity>
     </application>
 

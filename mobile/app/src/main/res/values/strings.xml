@@ -14,6 +14,9 @@
     <!--String for footer-->
     <string name="footer_l_button_text">Profil</string>
     <string name="footer_r_button_text">Restaurants</string>
+
+
     <string name="title_activity_restaurants">RestaurantsActivity</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_profil">Profil</string>
 </resources>

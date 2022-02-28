@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="purple">#380e61</color>
+    <color name="purple_search_bar">#270a43</color>
     <color name="grey">#5D737E</color>
     <color name="blue_one">#BDD4E7</color>
     <color name="blue_second">#3EAFE4</color>

@@ -10,12 +10,12 @@
         android:id="@+id/textView"
         android:layout_width="95dp"
         android:layout_height="25dp"
-        android:text="@string/footer_r_button_text"
+        android:text="@string/footer_l_button_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.191" />
+        app:layout_constraintVertical_bias="0.205" />
 
     <RelativeLayout
         android:id="@+id/footer"
@@ -51,25 +51,4 @@
             android:layout_marginEnd="180dp"
             android:text="@string/footer_l_button_text" />
     </RelativeLayout>
-
-    <FrameLayout
-        android:id="@+id/header"
-        android:layout_width="413dp"
-        android:layout_height="55dp"
-        android:background="@color/purple_search_bar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ImageButton
-            android:id="@+id/imageButton4"
-            android:background="@color/purple_search_bar"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/logo_search_foreground" />
-    </FrameLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

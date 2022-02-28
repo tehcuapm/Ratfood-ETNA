@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ratfoodapp.R;
@@ -15,6 +16,7 @@ import com.example.ratfoodapp.api.UsersApi;
 import com.example.ratfoodapp.models.Users;
 
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -35,12 +37,35 @@ public class LoginActivity extends AppCompatActivity {
         input_username = (EditText) findViewById(R.id.input_username);
         input_password = (EditText) findViewById(R.id.input_password);
         btn_login = (Button) findViewById(R.id.login_btn);
+        Button btn_register = (Button) findViewById(R.id.signup_btn);
+        
+        btn_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+            }
+        });
 
         btn_login.setOnClickListener(new View.OnClickListener() {  ////Button click event
             @Override
             public void onClick(View v) {
-
                 LoginCheck(input_username.getText().toString(),input_password.getText().toString());
+            }
+        });
+
+        Button btn_rest = (Button) findViewById(R.id.btn_restaurant);
+        btn_rest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, RestaurantsActivity.class));
+            }
+        });
+
+        Button btn_prof = (Button) findViewById(R.id.btn_profil);
+        btn_prof.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, Profil.class));
             }
         });
 

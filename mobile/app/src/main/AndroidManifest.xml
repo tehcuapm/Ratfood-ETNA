@@ -14,19 +14,17 @@
         android:theme="@style/Theme.RatFoodApp"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".views.LoginActivity"
-            android:exported="true" >
+            android:name=".views.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.RatFoodApp.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".views.TestApi"
-            android:exported="false">
-
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>

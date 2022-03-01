@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,48 +27,17 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
+    private static volatile LoginActivity instance = null;
     EditText input_username, input_password;
     Button btn_login;
+    public Users user = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.instance = instance;
         setContentView(R.layout.activity_login);
-
-        input_username = (EditText) findViewById(R.id.input_username);
-        input_password = (EditText) findViewById(R.id.input_password);
-        btn_login = (Button) findViewById(R.id.login_btn);
-        Button btn_register = (Button) findViewById(R.id.signup_btn);
-        
-        btn_register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
-            }
-        });
-
-        btn_login.setOnClickListener(new View.OnClickListener() {  ////Button click event
-            @Override
-            public void onClick(View v) {
-                LoginCheck(input_username.getText().toString(),input_password.getText().toString());
-            }
-        });
-
-        Button btn_rest = (Button) findViewById(R.id.btn_restaurant);
-        btn_rest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, RestaurantsActivity.class));
-            }
-        });
-
-        Button btn_prof = (Button) findViewById(R.id.btn_profil);
-        btn_prof.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, Profil.class));
-            }
-        });
+        setElements();
 
     }
 
@@ -83,7 +53,9 @@ public class LoginActivity extends AppCompatActivity {
                         String result = response.body().string();
                         JSONObject obj = new JSONObject(result);
                         String getstatus = obj.getString("user");
-                        createUser(obj);
+                        user = createUser(getstatus);
+
+                        Toast.makeText(getApplicationContext(), ""+user.getUsername(), Toast.LENGTH_SHORT).show();
                         Toast.makeText(getApplicationContext(), getstatus, Toast.LENGTH_LONG).show();
 
                     } catch (Exception e) {
@@ -101,19 +73,48 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+    private void setElements() {
+        input_username = findViewById(R.id.input_username);
+        input_password = findViewById(R.id.input_password);
+        btn_login = findViewById(R.id.login_btn);
+        Button btn_register = findViewById(R.id.signup_btn);
 
-    public void createUser(JSONObject obj){
+        btn_login.setOnClickListener(new View.OnClickListener() {  ////Button click event
+            @Override
+            public void onClick(View v) {
+                LoginCheck(input_username.getText().toString(), input_password.getText().toString());
+            }
+        });
+        btn_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+            }
+        });
+    }
+
+        public Users createUser(String object){
         try{
+            JSONObject obj = new JSONObject(object);
             String username = obj.getString("username");
             String name = obj.getString("name");
             String firstname = obj.getString("firstname");
             String _id = obj.getString("_id");
             int age = obj.getInt("age");
 
+            return new Users(_id, age, username, firstname, name);
 
         } catch (Exception e){
             e.printStackTrace();
+            return user;
         }
+
+    }
+    public static LoginActivity getInstance(){
+        return instance;
+    }
+    public String giveUser(){
+        return user.getUsername();
     }
 
 }

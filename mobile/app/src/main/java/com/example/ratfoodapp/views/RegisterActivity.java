@@ -29,12 +29,12 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.user = LoginActivity.getInstance().giveUser();
+        this.user =  LoginActivity.getInstance().giveUser();
 
         setContentView(R.layout.activity_register);
         Toast.makeText(getApplicationContext(), "" + this.user.toString(), Toast.LENGTH_SHORT).show();
 
-        Button btn_rest = (Button) findViewById(R.id.btn_restaurant);
+        Button btn_rest = findViewById(R.id.btn_restaurant);
         btn_rest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -20,14 +20,13 @@ import retrofit2.Response;
 public class TestApi extends AppCompatActivity {
 
     TextView tv;
-    String url = "https://galeriens.loca.lt/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_api);
 
-        tv = (TextView) findViewById(R.id.tv);
+        tv = findViewById(R.id.tv);
 
         UsersApi usersApi = ApiBuilder.builderAPI().create(UsersApi.class);
 

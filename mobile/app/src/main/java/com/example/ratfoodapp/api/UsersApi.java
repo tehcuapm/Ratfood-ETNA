@@ -21,5 +21,12 @@ public interface UsersApi
     @POST("api/auth")
     Call<ResponseBody> loginUser(@Field("username") String username, @Field("password") String password);
 
+    @POST("api/register")
+    Call<ResponseBody> createUser(@Field("username") String username,
+                                  @Field("firstname") String firstname,
+                                  @Field("lastname") String lastname,
+                                  @Field("email") String email,
+                                  @Field("age") int age,
+                                  @Field("password") String password);
 
 }

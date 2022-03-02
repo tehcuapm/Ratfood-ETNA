@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public interface ApiBuilder {
 
     static Retrofit builderAPI(){
-        String url = "https://galeriens.loca.lt/";
+        String url = "https://galerien.loca.lt/";
         return new Retrofit.Builder()
                 .baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create())

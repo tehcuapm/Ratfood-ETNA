@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.191" />
+        app:layout_constraintVertical_bias="0.296" />
 
     <RelativeLayout
         android:id="@+id/footer"
@@ -62,14 +62,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ImageButton
-            android:id="@+id/imageButton4"
-            android:background="@color/purple_search_bar"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/logo_search_foreground" />
-    </FrameLayout>
+        app:layout_constraintVertical_bias="0.0"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

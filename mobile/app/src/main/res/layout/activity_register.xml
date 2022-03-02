@@ -77,6 +77,18 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+
+            <EditText
+                android:id="@+id/input_age"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Age"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
 
 
 

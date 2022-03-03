@@ -43,7 +43,7 @@ public class RestaurantsActivity extends AppCompatActivity {
     }
 
     public void restaurantParser(HashMap map){
-        TextView rest = findViewById(R.id.restaurant);
+        TextView rest = findViewById(R.id.btn_restaurant);
         rest.append(map.get("name").toString());
 
 

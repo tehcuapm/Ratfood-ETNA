@@ -1,24 +1,17 @@
 <resources>
     <string name="app_name">RatFoodApp</string>
     <string name="title_activity_rat">RatActivity</string>
-    <!-- Strings used for fragments for navigation -->
-
-    <string name="title_activity_test_api">TestAPI</string>
 
     <!--String for footer-->
     <string name="footer_l_button_text">Profil</string>
     <string name="footer_r_button_text">Restaurants</string>
+    <!--~~~~~~~~~~~~~~~~~-->
 
-    <string name="title_activity_main">MainActivity</string>
-
+    <!--Name of activities-->
+    <string name="title_activity_test_api">TestAPI</string>
     <string name="title_activity_restaurants">RestaurantsActivity</string>
     <string name="title_activity_profil">Profil</string>
     <string name="title_activity_register">RegisterActivity</string>
     <string name="title_activity_change">ChangeActivity</string>
-
-    <!--NAV STRINGS-->
-    <string name="label_fragment_restaurant">RestaurantFragment</string>
-    <string name="label_fragment_login">LoginFragment</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--~~~~~~~~~~~~~~~~~~-->
 </resources>

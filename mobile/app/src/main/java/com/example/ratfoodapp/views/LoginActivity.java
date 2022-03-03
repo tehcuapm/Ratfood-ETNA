@@ -77,8 +77,24 @@ public class LoginActivity extends AppCompatActivity {
         input_password = findViewById(R.id.input_password);
         btn_login = findViewById(R.id.login_btn);
         Button btn_register = findViewById(R.id.signup_btn);
+        Button btn_rest = findViewById(R.id.btn_restaurant);
+        Button btn_prof = findViewById(R.id.btn_profil);
 
-        btn_login.setOnClickListener(new View.OnClickListener() {  ////Button click event
+        btn_rest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, RestaurantsActivity.class));
+            }
+        });
+
+        btn_prof.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, Profil.class));
+            }
+        });
+
+        btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 LoginCheck(input_username.getText().toString(), input_password.getText().toString());

@@ -51,6 +51,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
         app:layout_constraintVertical_bias="0.0" />
 
     <ScrollView
@@ -71,5 +72,8 @@
 
         </LinearLayout>
     </ScrollView>
+=======
+        app:layout_constraintVertical_bias="0.0"/>
+>>>>>>> matheo
 
 </androidx.constraintlayout.widget.ConstraintLayout>

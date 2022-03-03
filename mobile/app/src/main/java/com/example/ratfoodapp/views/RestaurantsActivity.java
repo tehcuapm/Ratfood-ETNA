@@ -3,6 +3,7 @@ package com.example.ratfoodapp.views;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.android.volley.RequestQueue;
 import com.example.ratfoodapp.api.ApiBuilder;
 import com.example.ratfoodapp.api.RestaurantsApi;
 import com.example.ratfoodapp.models.Restaurants;
@@ -22,6 +23,8 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.example.ratfoodapp.R;
@@ -34,13 +37,19 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class RestaurantsActivity extends AppCompatActivity {
+    private RecyclerView recyclerView;
+    private RequestQueue requestQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.restaurants_layout);
+        recyclerView = findViewById(R.id.recyclerview);
+        callRest();
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        //callRest();
+        requestQueue = VolleySingleton.getmInstance(this).getRequestQueue();
 
 
     }
@@ -51,13 +60,12 @@ public class RestaurantsActivity extends AppCompatActivity {
         call.enqueue(new Callback<List<Restaurants>>() {
             @Override
             public void onResponse(Call<List<Restaurants>> call, Response<List<Restaurants>> response) {
-                TextView rest = findViewById(R.id.text_test);
+
                 List<Restaurants> data = response.body();
-                data.forEach(restaurant -> {
-                    ///rest.append(restaurant.getRestaurant().get("name"));
-                    Toast.makeText(getApplicationContext(), restaurant.getRestaurant().get("name"), Toast.LENGTH_LONG).show();
-                    rest.append(restaurant.getRestaurant().get("name"));
-                });
+
+                RestAdapter adapter = new RestAdapter(RestaurantsActivity.this , data);
+
+                recyclerView.setAdapter(adapter);
 
             }
 

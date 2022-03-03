@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,33 +13,32 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RatFoodApp"
         android:usesCleartextTraffic="true">
-
+        <activity
+            android:name=".views.DetailsActivity"
+            android:exported="false" />
         <activity
             android:name=".views.ChangeActivity"
             android:exported="true"
-            android:theme="@style/Theme.RatFoodApp.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.RatFoodApp.NoActionBar" />
         <activity
             android:name=".views.Profil"
             android:exported="true"
-            android:theme="@style/Theme.RatFoodApp.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.RatFoodApp.NoActionBar" />
         <activity
             android:name=".views.LoginActivity"
             android:exported="true"
-            android:theme="@style/Theme.RatFoodApp.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.RatFoodApp.NoActionBar" />
         <activity
             android:name=".views.RegisterActivity"
             android:exported="true"
-            android:theme="@style/Theme.RatFoodApp.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.RatFoodApp.NoActionBar" />
         <activity
             android:name=".views.RestaurantsActivity"
             android:exported="true"
             android:theme="@style/Theme.RatFoodApp.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

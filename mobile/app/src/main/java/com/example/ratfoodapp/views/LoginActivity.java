@@ -30,12 +30,12 @@ public class LoginActivity extends AppCompatActivity {
     private static volatile LoginActivity instance = null;
     EditText input_username, input_password;
     Button btn_login;
-    public Users user = null;
+    public Users user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.instance = instance;
+        this.instance = this;
         setContentView(R.layout.activity_login);
         setElements();
 
@@ -55,7 +55,6 @@ public class LoginActivity extends AppCompatActivity {
                         String getstatus = obj.getString("user");
                         user = createUser(getstatus);
 
-                        Toast.makeText(getApplicationContext(), ""+user.getUsername(), Toast.LENGTH_SHORT).show();
                         Toast.makeText(getApplicationContext(), getstatus, Toast.LENGTH_LONG).show();
 
                     } catch (Exception e) {

@@ -40,13 +40,5 @@ public class Users {
 
     }
 
-    public void putUser (Map<String,String> data){
-        this._id = data.get("id");
-        this.username = data.get("username");
-        this.firstname = data.get("firstname");
-        this.name = data.get("name");
-        this.age = Integer.parseInt(data.get("age"));
-    }
-
 
 }

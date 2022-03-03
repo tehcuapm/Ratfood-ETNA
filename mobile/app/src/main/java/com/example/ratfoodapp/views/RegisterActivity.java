@@ -44,10 +44,11 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.user = LoginActivity.getInstance().giveUser();
+        ////this.user = LoginActivity.getInstance().giveUser();
 
         setContentView(R.layout.activity_register);
-        Toast.makeText(getApplicationContext(), "" + this.user.toString(), Toast.LENGTH_SHORT).show();
+        ///
+        // Toast.makeText(getApplicationContext(), "" + this.user.toString(), Toast.LENGTH_SHORT).show();
     }
 
 
@@ -71,7 +72,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "" + t, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "FAIL" + t, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -100,6 +101,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 checkRegister(inputs);
+                Toast.makeText(getApplicationContext(),"BOUTON",Toast.LENGTH_LONG).show();
             }
         });
     }

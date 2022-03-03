@@ -10,9 +10,11 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.text.Layout;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,7 +40,7 @@ public class RestaurantsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.restaurants_layout);
 
-        callRest();
+        //callRest();
 
 
     }
@@ -49,7 +51,7 @@ public class RestaurantsActivity extends AppCompatActivity {
         call.enqueue(new Callback<List<Restaurants>>() {
             @Override
             public void onResponse(Call<List<Restaurants>> call, Response<List<Restaurants>> response) {
-                TextView rest = findViewById(R.id.textView);
+                TextView rest = findViewById(R.id.text_test);
                 List<Restaurants> data = response.body();
                 data.forEach(restaurant -> {
                     ///rest.append(restaurant.getRestaurant().get("name"));
@@ -58,7 +60,6 @@ public class RestaurantsActivity extends AppCompatActivity {
                 });
 
             }
-
 
             @Override
             public void onFailure(Call<List<Restaurants>> call, Throwable t) {

@@ -85,7 +85,9 @@
                 android:id="@+id/input_age"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="Age"/>
+                android:hint="Age"
+
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

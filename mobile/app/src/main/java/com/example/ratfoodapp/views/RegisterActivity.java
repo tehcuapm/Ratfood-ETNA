@@ -45,43 +45,52 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ////this.user = LoginActivity.getInstance().giveUser();
-
         setContentView(R.layout.activity_register);
+
+        setElements();
+        setInput();
         ///
         // Toast.makeText(getApplicationContext(), "" + this.user.toString(), Toast.LENGTH_SHORT).show();
     }
 
 
     private void checkRegister(String inputs[]) {
-        Call<ResponseBody> call = ApiBuilder.builderAPI().create(UsersApi.class)
-                .createUser(inputs[0], inputs[1], inputs[2], inputs[3], Integer.parseInt(inputs[4]),
-                        inputs[5]);
-        call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+        Toast.makeText(this, inputs[0], Toast.LENGTH_SHORT).show();
+        if(inputs[4].equals("")){
+            Toast.makeText(getApplicationContext(), "FAIL", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Call<ResponseBody> call = ApiBuilder.builderAPI().create(UsersApi.class)
+                    .createUser(inputs[0], inputs[1], inputs[2], inputs[3], Integer.parseInt(inputs[4]),
+                            inputs[5]);
+            call.enqueue(new Callback<ResponseBody>() {
+                @Override
+                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
 
-                if(response.isSuccessful()) {
-                    try {
-                        String result = response.body().string();
-                        Toast.makeText(getApplicationContext(), ""+result, Toast.LENGTH_SHORT).show();
+                    if(response.isSuccessful()) {
+                        try {
+                            String result = response.body().string();
+                            Toast.makeText(getApplicationContext(), ""+result, Toast.LENGTH_SHORT).show();
 
-                    } catch (IOException e) {
-                        e.printStackTrace();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
-            }
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "FAIL" + t, Toast.LENGTH_SHORT).show();
-            }
-        });
+                @Override
+                public void onFailure(Call<ResponseBody> call, Throwable t) {
+                    Toast.makeText(getApplicationContext(), "FAIL" + t, Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
     }
 
     private void setElements() {
         Button btn_register = findViewById(R.id.register_btn);
         Button btn_rest = findViewById(R.id.btn_restaurant);
         Button btn_prof = findViewById(R.id.btn_profil);
-        String inputs[] = getInput();
+
 
         btn_rest.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,13 +109,13 @@ public class RegisterActivity extends AppCompatActivity {
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String[] inputs = getInput();
                 checkRegister(inputs);
-                Toast.makeText(getApplicationContext(),"BOUTON",Toast.LENGTH_LONG).show();
             }
         });
     }
 
-    private String[] getInput() {
+    private void setInput() {
         input_username = findViewById(R.id.input_username);
         input_firstname = findViewById(R.id.input_firstname);
         input_lastname = findViewById(R.id.input_lastname);
@@ -114,13 +123,15 @@ public class RegisterActivity extends AppCompatActivity {
         input_age = findViewById(R.id.input_age);
         input_password = findViewById(R.id.input_password);
 
+    }
+
+    private String[] getInput(){
         String username = input_username.getText().toString();
         String firstname = input_firstname.getText().toString();
         String lastname = input_lastname.getText().toString();
         String email = input_email.getText().toString();
         String age = input_age.getText().toString();
         String password = input_password.getText().toString();
-
         String arr[] = {username, firstname, lastname, email, age, password};
         return arr;
     }

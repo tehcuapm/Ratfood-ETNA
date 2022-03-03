@@ -23,6 +23,7 @@ class Restaurant extends Model
         "localization",
         "phone_number",
         "website",
+        "image",
         "hours"
     ];
 }

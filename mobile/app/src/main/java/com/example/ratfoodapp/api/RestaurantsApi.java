@@ -16,7 +16,7 @@ import retrofit2.http.Path;
 
 public interface RestaurantsApi {
     @GET("api/restaurants")
-    Call<List<Restaurants>> getRestaurants();
+    Call<List<Restaurants>> showRestaurants();
 
     @POST("api/restaurant")
     Call<ResponseBody> createRest(@Field("name") String name, @Field("description")String description,@Field("grade")float grade,

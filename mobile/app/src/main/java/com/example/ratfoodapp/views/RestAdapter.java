@@ -54,6 +54,7 @@ public class RestAdapter extends RecyclerView.Adapter<RestAdapter.RestHolder> {
                 Intent intent = new Intent(context , DetailsActivity.class);
 
                 Bundle bundle = new Bundle();
+                bundle.putString("_id", data.get("_id"));
                 bundle.putString("title" , data.get("name"));
                 bundle.putString("overview" , data.get("description"));
                 bundle.putString("poster" , "https://cdn.discordapp.com/attachments/472313197836107780/670902106131136512/tqOmA0E.png");

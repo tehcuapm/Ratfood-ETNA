@@ -21,4 +21,29 @@ class Menu extends Model
         "price",
         "id_rest",
     ];
+
+    static public function getIdRest($num) {
+        switch ($num) {
+            case 1:
+                $Rest = Restaurant::where('name', '=', 'O souvennirs de Theoss')->first();
+                break;
+            case 2:
+                $Rest = Restaurant::where('name', '=', 'RatKing')->first();
+                break;
+            case 3:
+                $Rest = Restaurant::where('name', '=', 'Délices des îles')->first();
+                break;
+            case 4:
+                $Rest = Restaurant::where('name', '=', 'Innov\'Joh')->first();
+                break;
+            case 5:
+                $Rest = Restaurant::where('name', '=', 'Kilian Fried Chicken')->first();
+                break;
+            case 6:
+                $Rest = Restaurant::where('name', '=', 'Les trois baguettes')->first();
+                break;
+        }
+        return $Rest["_id"];
+    }
+    
 }

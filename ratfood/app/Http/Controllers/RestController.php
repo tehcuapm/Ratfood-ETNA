@@ -22,6 +22,7 @@ class RestController extends Controller
             "localization" => "required|string",
             "phone_number" => "required|string",
             "website" => "required|string",
+            "image" => "string",
             "hours" => "required|string",
         ]);
 
@@ -47,6 +48,7 @@ class RestController extends Controller
             "localization" => "required|string",
             "phone_number" => "required|string",
             "website" => "required|string",
+            "image" => "string",
             "hours" => "required|string",
         ]);
 
@@ -61,6 +63,7 @@ class RestController extends Controller
             "localization" => $request['localization'],
             "phone_number" => $request['phone_number'],
             "website" => $request['website'],
+            "image" => $request['image'],
             "hours" => $request['hours'],
         ]);
 

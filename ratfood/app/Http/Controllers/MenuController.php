@@ -21,11 +21,14 @@ class MenuController extends Controller
      */
     public function createMenu(Request $request, $id)
     {
+        dd(Menu::getIdRest(1));
+
         $req = Validator::make($request->all(), [
             'name' => 'required|string',
             'description' => 'required|string',
             'price' => 'required|numeric'
         ]);
+
 
         if ($req->fails()) {
             return response()->json($req->errors()->toJson(), 400);

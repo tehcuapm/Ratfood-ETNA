@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public interface ApiBuilder {
 
     static Retrofit builderAPI(){
-        String url = "https://c124-176-158-50-41.ngrok.io/";
+        String url = "https://0b18-45-149-155-105.ngrok.io/";
         return new Retrofit.Builder()
                 .baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create())

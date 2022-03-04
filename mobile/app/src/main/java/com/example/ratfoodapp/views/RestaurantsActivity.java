@@ -45,6 +45,7 @@ public class RestaurantsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.restaurants_layout);
         recyclerView = findViewById(R.id.recyclerview);
+        setElements();
         callRest();
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -63,7 +64,7 @@ public class RestaurantsActivity extends AppCompatActivity {
 
                 List<Restaurants> data = response.body();
 
-                RestAdapter adapter = new RestAdapter(RestaurantsActivity.this , data);
+                RestAdapter adapter = new RestAdapter(RestaurantsActivity.this, data);
 
                 recyclerView.setAdapter(adapter);
 
@@ -77,4 +78,23 @@ public class RestaurantsActivity extends AppCompatActivity {
         });
     }
 
+
+    private void setElements() {
+        Button btn_rest = findViewById(R.id.btn_restaurant);
+        Button btn_prof = findViewById(R.id.btn_profil);
+
+        btn_rest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(RestaurantsActivity.this, RestaurantsActivity.class));
+            }
+        });
+
+        btn_prof.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(RestaurantsActivity.this, Profil.class));
+            }
+        });
+    }
 }

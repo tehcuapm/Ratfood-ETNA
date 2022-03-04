@@ -15,6 +15,13 @@ public class Menus {
     }
 
     public HashMap<String, String> getMenus(){
-
+    String priceStr = String.valueOf(this.price);
+    HashMap<String,String> map = new HashMap<>();
+    map.put("_id", this._id);
+    map.put("name", this.name);
+    map.put("description", this.description);
+    map.put("price", priceStr);
+    map.put("id_rest", this.id_rest);
+    return map;
     }
 }

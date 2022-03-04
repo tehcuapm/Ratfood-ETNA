@@ -25,7 +25,7 @@ public class Profil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profil_layout);
 
-        Button btn_rest = (Button) findViewById(R.id.btn_restaurant);
+        Button btn_rest = findViewById(R.id.btn_restaurant);
         btn_rest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,7 +33,7 @@ public class Profil extends AppCompatActivity {
             }
         });
 
-        Button btn_prof = (Button) findViewById(R.id.btn_profil);
+        Button btn_prof = findViewById(R.id.btn_profil);
         btn_prof.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

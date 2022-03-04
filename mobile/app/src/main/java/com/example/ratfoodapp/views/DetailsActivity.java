@@ -1,6 +1,7 @@
 package com.example.ratfoodapp.views;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -8,6 +9,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.example.ratfoodapp.R;
+import com.example.ratfoodapp.api.ApiBuilder;
+import com.example.ratfoodapp.api.MenusApi;
+import com.example.ratfoodapp.models.Menus;
+
+import java.util.List;
+
+import retrofit2.Call;
 
 public class DetailsActivity extends AppCompatActivity {
 
@@ -33,5 +41,10 @@ public class DetailsActivity extends AppCompatActivity {
         rating_tv.setText(mRating);
         title_tv.setText(mTitle);
         overview_tv.setText(mOverView);
+    }
+
+    public void callRest() {
+        MenusApi menusApi = ApiBuilder.builderAPI().create(MenusApi.class);
+        Call<List<Menus>> call = menusApi.getMenus();
     }
 }

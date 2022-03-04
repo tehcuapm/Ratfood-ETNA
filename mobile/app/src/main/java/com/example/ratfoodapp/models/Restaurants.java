@@ -30,7 +30,5 @@ public class Restaurants {
         map.put("grade",gradeStr);
 
         return map;
-
-
     }
 }

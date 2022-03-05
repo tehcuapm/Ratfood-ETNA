@@ -8,7 +8,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.294" />
         <entry key="app/src/main/res/drawable/profil_information_layout.xml" value="0.294" />
         <entry key="app/src/main/res/layout/activity_change.xml" value="0.276268115942029" />
-        <entry key="app/src/main/res/layout/activity_details.xml" value="0.34277620396600567" />
+        <entry key="app/src/main/res/layout/activity_details.xml" value="0.17956656346749225" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2647058823529412" />
         <entry key="app/src/main/res/layout/activity_rat.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.1" />
@@ -23,7 +23,8 @@
         <entry key="app/src/main/res/layout/fragment_register.xml" value="0.15833333333333333" />
         <entry key="app/src/main/res/layout/fragment_restaurant.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.35625" />
-        <entry key="app/src/main/res/layout/item.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/item.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_menu.xml" value="0.38837920489296635" />
         <entry key="app/src/main/res/layout/layouttest.xml" value="0.1" />
         <entry key="app/src/main/res/layout/profil_layout.xml" value="0.45" />
         <entry key="app/src/main/res/layout/restaurants_layout.xml" value="0.40993788819875776" />

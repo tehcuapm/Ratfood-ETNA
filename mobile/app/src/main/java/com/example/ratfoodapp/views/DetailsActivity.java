@@ -38,6 +38,10 @@ public class DetailsActivity extends AppCompatActivity {
         TextView rating_tv = findViewById(R.id.mRating);
         TextView title_tv = findViewById(R.id.mTitle);
         TextView overview_tv = findViewById(R.id.rest_desc);
+        TextView hours_tv = findViewById(R.id.hour_text);
+        TextView phone_tv = findViewById(R.id.phone_text);
+        TextView website_tv = findViewById(R.id.website_text);
+        TextView adresse_tv = findViewById(R.id.adresse_text);
 
         Bundle bundle = getIntent().getExtras();
 
@@ -45,11 +49,19 @@ public class DetailsActivity extends AppCompatActivity {
         String mPoster = bundle.getString("poster");
         String mOverView = bundle.getString("overview");
         String mRating = bundle.getString("rating");
+        String mHours = bundle.getString("hours");
+        String mPhone = bundle.getString("phone_number");
+        String mWeb = bundle.getString("website");
+        String mAdresse = bundle.getString("localisation");
 
         Glide.with(this).load(mPoster).into(imageView);
         rating_tv.setText(mRating);
         title_tv.setText(mTitle);
         overview_tv.setText(mOverView);
+        hours_tv.setText(mHours);
+        phone_tv.setText(mPhone);
+        website_tv.setText(mWeb);
+        adresse_tv.setText(mAdresse);
 
         callRest();
         recyclerView.setHasFixedSize(true);
@@ -64,7 +76,6 @@ public class DetailsActivity extends AppCompatActivity {
         String id_rest = bundle.getString("_id");
         MenusApi menusApi = ApiBuilder.builderAPI().create(MenusApi.class);
         Call<List<Menus>> call = menusApi.getMenus(id_rest);
-        Toast.makeText(this, "" + id_rest, Toast.LENGTH_SHORT).show();
         call.enqueue(new Callback<List<Menus>>() {
             @Override
             public void onResponse(Call<List<Menus>> call, Response<List<Menus>> response) {

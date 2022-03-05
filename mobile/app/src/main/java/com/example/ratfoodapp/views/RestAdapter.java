@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -46,7 +47,7 @@ public class RestAdapter extends RecyclerView.Adapter<RestAdapter.RestHolder> {
         holder.rating.setText(data.get("grade"));
         holder.title.setText(data.get("name"));
         holder.overview.setText(data.get("description"));
-        Glide.with(context).load("https://cdn.discordapp.com/attachments/472313197836107780/670902106131136512/tqOmA0E.png").into(holder.imageView);
+        Glide.with(context).load(data.get("image")).into(holder.imageView);
 
         holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,8 +58,12 @@ public class RestAdapter extends RecyclerView.Adapter<RestAdapter.RestHolder> {
                 bundle.putString("_id", data.get("_id"));
                 bundle.putString("title" , data.get("name"));
                 bundle.putString("overview" , data.get("description"));
-                bundle.putString("poster" , "https://cdn.discordapp.com/attachments/472313197836107780/670902106131136512/tqOmA0E.png");
+                bundle.putString("poster" , data.get("image"));
                 bundle.putString("rating" , data.get("grade"));
+                bundle.putString("hours", data.get("hour"));
+                bundle.putString("phone_number", data.get("phone_number"));
+                bundle.putString("website", data.get("website"));
+                bundle.putString("localisation", data.get("localisation"));
 
                 intent.putExtras(bundle);
 

@@ -13,7 +13,7 @@ class MenuController extends Controller
      */
     public function allMenu($id)
     {
-        return response()->json(Menu::all()->where('id_rest', '=', $id));
+        return response()->json(Menu::where('id_rest', '=', $id)->get());
     }
 
     /**

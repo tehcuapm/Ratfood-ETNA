@@ -26,20 +26,10 @@ public class ChangeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         Button btn_rest = (Button) findViewById(R.id.btn_restaurant);
-        btn_rest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(ChangeActivity.this, RestaurantsActivity.class));
-            }
-        });
+        btn_rest.setOnClickListener(view -> startActivity(new Intent(ChangeActivity.this, RestaurantsActivity.class)));
 
         Button btn_prof = (Button) findViewById(R.id.btn_profil);
-        btn_prof.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(ChangeActivity.this, Profil.class));
-            }
-        });
+        btn_prof.setOnClickListener(view -> startActivity(new Intent(ChangeActivity.this, Profil.class)));
     }
 
 

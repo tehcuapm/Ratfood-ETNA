@@ -14,6 +14,6 @@
     <string name="title_activity_register">RegisterActivity</string>
     <string name="title_activity_change">ChangeActivity</string>
     <!--~~~~~~~~~~~~~~~~~~-->
-    
+
     <string name="bulle_size">180px</string>
 </resources>

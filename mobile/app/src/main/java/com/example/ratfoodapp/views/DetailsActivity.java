@@ -32,12 +32,23 @@ import retrofit2.Response;
 public class DetailsActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RequestQueue requestQueue;
-
+    private String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+
+        Button del_btn = findViewById(R.id.del_btn);
+        try{
+            this.user = LoginActivity.getInstance().giveUser();
+            del_btn.setOnClickListener(view -> delRest());
+            del_btn.setVisibility(View.VISIBLE);
+
+        }catch(Exception e){
+            del_btn.setVisibility(View.GONE);
+        }
+
         recyclerView = findViewById(R.id.menus_view);
 
         ImageView imageView = findViewById(R.id.poster_image);
@@ -48,9 +59,6 @@ public class DetailsActivity extends AppCompatActivity {
         TextView phone_tv = findViewById(R.id.phone_text);
         TextView website_tv = findViewById(R.id.website_text);
         TextView adresse_tv = findViewById(R.id.adresse_text);
-        Button del_btn = findViewById(R.id.del_btn);
-
-        del_btn.setOnClickListener(view -> delRest());
 
         Bundle bundle = getIntent().getExtras();
 

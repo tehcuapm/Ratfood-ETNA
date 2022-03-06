@@ -7,6 +7,7 @@ import java.util.List;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
+import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -32,6 +33,8 @@ public interface RestaurantsApi {
                                 @Field("phone_number")String phone_number, @Field("website")String website,@Field("hour")String hours);
 
 
+    @DELETE("api/restaurant/{id}")
+    Call<ResponseBody> deleteRest(@Path("id")String id);
 
 
 

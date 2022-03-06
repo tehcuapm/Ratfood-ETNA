@@ -17,6 +17,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/del_btn"
+        android:layout_width="107dp"
+        android:layout_height="35dp"
+        android:text="Delete"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="168dp"
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/mRating"
         android:layout_width="57dp"

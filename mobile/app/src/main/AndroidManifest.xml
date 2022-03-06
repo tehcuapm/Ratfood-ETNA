@@ -14,6 +14,11 @@
         android:theme="@style/Theme.RatFoodApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".views.AddRestActivity"
+            android:exported="false"
+            android:label="@string/title_activity_add_rest"
+            android:theme="@style/Theme.RatFoodApp.NoActionBar" />
+        <activity
             android:name=".views.DetailsActivity"
             android:exported="false" />
         <activity

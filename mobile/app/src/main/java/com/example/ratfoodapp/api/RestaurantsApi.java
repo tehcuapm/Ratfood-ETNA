@@ -18,16 +18,18 @@ public interface RestaurantsApi {
     @GET("api/restaurants")
     Call<List<Restaurants>> showRestaurants();
 
+    @FormUrlEncoded
     @POST("api/restaurant")
-    Call<ResponseBody> createRest(@Field("name") String name, @Field("description")String description,@Field("grade")float grade,
-                                   @Field("localization")String localisation,@Field("phone_number")String phone_number,
-                                  @Field("website")String website,@Field("hour")String hours);
+    Call<ResponseBody> createRest(@Field("name") String name, @Field("description")String description,
+                                  @Field("grade")float grade, @Field("localization")String localisation,
+                                  @Field("phone_number")String phone_number, @Field("website")String website,
+                                  @Field("hour")String hours);
 
     @FormUrlEncoded
     @PUT("api/restaurant/{id}")
-    Call<ResponseBody> editRest(@Path("id")String id,@Field("name") String name, @Field("description")String description,@Field("grade")float grade,
-                                @Field("localization")String localisation,@Field("phone_number")String phone_number,
-                                @Field("website")String website,@Field("hour")String hours);
+    Call<ResponseBody> editRest(@Path("id")String id,@Field("name") String name, @Field("description")String description,
+                                @Field("grade")float grade, @Field("localization")String localisation,
+                                @Field("phone_number")String phone_number, @Field("website")String website,@Field("hour")String hours);
 
 
 

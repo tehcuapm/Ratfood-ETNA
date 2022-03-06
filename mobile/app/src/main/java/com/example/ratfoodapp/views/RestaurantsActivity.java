@@ -15,6 +15,7 @@ import android.text.Layout;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -88,6 +89,7 @@ public class RestaurantsActivity extends AppCompatActivity {
     private void setElements(boolean state) {
         Button btn_rest = findViewById(R.id.btn_restaurant);
         Button btn_prof = findViewById(R.id.btn_profil);
+        ImageButton btn_add = findViewById(R.id.add_rest);
 
         btn_rest.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +98,7 @@ public class RestaurantsActivity extends AppCompatActivity {
             }
         });
 
+        btn_add.setOnClickListener(view -> startActivity(new Intent(RestaurantsActivity.this, AddRestActivity.class)));
         if(state){
             btn_prof.setOnClickListener(view -> startActivity(new Intent(RestaurantsActivity.this, Profil.class)));
         } else{btn_prof.setOnClickListener(view -> startActivity(new Intent(RestaurantsActivity.this, LoginActivity.class)));

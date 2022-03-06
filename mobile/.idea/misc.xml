@@ -6,7 +6,9 @@
         <entry key="app/src/main/res/drawable/bulle_drawable.xml" value="0.294" />
         <entry key="app/src/main/res/drawable/footer_border_top.xml" value="0.294" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.294" />
+        <entry key="app/src/main/res/drawable/logo_setting_foreground.xml" value="0.3235" />
         <entry key="app/src/main/res/drawable/profil_information_layout.xml" value="0.294" />
+        <entry key="app/src/main/res/layout/activity_add_rest.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_change.xml" value="0.276268115942029" />
         <entry key="app/src/main/res/layout/activity_details.xml" value="0.17956656346749225" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2647058823529412" />

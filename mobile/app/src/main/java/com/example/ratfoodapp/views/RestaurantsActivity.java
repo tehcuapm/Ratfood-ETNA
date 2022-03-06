@@ -50,6 +50,7 @@ public class RestaurantsActivity extends AppCompatActivity {
         try{
             this.user = LoginActivity.getInstance().giveUser();
             setElements(true);
+
         }catch(Exception e){
             setElements(false);
         }
@@ -94,11 +95,18 @@ public class RestaurantsActivity extends AppCompatActivity {
 
         btn_rest.setOnClickListener(view -> startActivity(new Intent(RestaurantsActivity.this, RestaurantsActivity.class)));
 
-        btn_update.setOnClickListener(view -> startActivity(new Intent(RestaurantsActivity.this, SettingRestActivity.class)));
-        btn_add.setOnClickListener(view -> startActivity(new Intent(RestaurantsActivity.this, AddRestActivity.class)));
         if(state){
             btn_prof.setOnClickListener(view -> startActivity(new Intent(RestaurantsActivity.this, Profil.class)));
+            btn_update.setOnClickListener(view -> startActivity(new Intent(RestaurantsActivity.this, SettingRestActivity.class)));
+            btn_add.setOnClickListener(view -> startActivity(new Intent(RestaurantsActivity.this, AddRestActivity.class)));
+            btn_update.setVisibility(View.VISIBLE);
+            btn_add.setVisibility(View.VISIBLE);
+
         } else{btn_prof.setOnClickListener(view -> startActivity(new Intent(RestaurantsActivity.this, LoginActivity.class)));
-            btn_prof.setText("LOGIN");}
+            btn_prof.setText("LOGIN");
+            btn_update.setVisibility(View.GONE);
+            btn_add.setVisibility(View.GONE);
+
+        }
     }
 }

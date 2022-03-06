@@ -39,13 +39,19 @@ import retrofit2.Response;
 public class RestaurantsActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RequestQueue requestQueue;
+    private String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.restaurants_layout);
         recyclerView = findViewById(R.id.recyclerview);
-        setElements();
+        try{
+            this.user = LoginActivity.getInstance().giveUser();
+            setElements(true);
+        }catch(Exception e){
+            setElements(false);
+        }
         callRest();
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -79,7 +85,7 @@ public class RestaurantsActivity extends AppCompatActivity {
     }
 
 
-    private void setElements() {
+    private void setElements(boolean state) {
         Button btn_rest = findViewById(R.id.btn_restaurant);
         Button btn_prof = findViewById(R.id.btn_profil);
 
@@ -90,11 +96,9 @@ public class RestaurantsActivity extends AppCompatActivity {
             }
         });
 
-        btn_prof.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(RestaurantsActivity.this, Profil.class));
-            }
-        });
+        if(state){
+            btn_prof.setOnClickListener(view -> startActivity(new Intent(RestaurantsActivity.this, Profil.class)));
+        } else{btn_prof.setOnClickListener(view -> startActivity(new Intent(RestaurantsActivity.this, LoginActivity.class)));
+            btn_prof.setText("LOGIN");}
     }
 }

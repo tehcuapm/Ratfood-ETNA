@@ -44,10 +44,15 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ////this.user = LoginActivity.getInstance().giveUser();
-        setContentView(R.layout.activity_register);
 
-        setElements();
+        setContentView(R.layout.activity_register);
+        try{
+            this.user = LoginActivity.getInstance().giveUser();
+            setElements(true);
+        }catch(Exception e){
+            setElements(false);
+        }
+
         setInput();
         ///
         // Toast.makeText(getApplicationContext(), "" + this.user.toString(), Toast.LENGTH_SHORT).show();
@@ -86,32 +91,22 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    private void setElements() {
+    private void setElements(boolean state) {
         Button btn_register = findViewById(R.id.register_btn);
         Button btn_rest = findViewById(R.id.btn_restaurant);
         Button btn_prof = findViewById(R.id.btn_profil);
+        if(state){
+            btn_prof.setOnClickListener(view -> startActivity(new Intent(RegisterActivity.this, Profil.class)));
+        } else{btn_prof.setOnClickListener(view -> startActivity(new Intent(RegisterActivity.this, LoginActivity.class)));
+        btn_prof.setText("LOGIN");}
+
+        btn_rest.setOnClickListener(view -> startActivity(new Intent(RegisterActivity.this, RestaurantsActivity.class)));
 
 
-        btn_rest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(RegisterActivity.this, RestaurantsActivity.class));
-            }
-        });
 
-        btn_prof.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(RegisterActivity.this, Profil.class));
-            }
-        });
-
-        btn_register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String[] inputs = getInput();
-                checkRegister(inputs);
-            }
+        btn_register.setOnClickListener(view -> {
+            String[] inputs = getInput();
+            checkRegister(inputs);
         });
     }
 

@@ -90,6 +90,7 @@ public class RestaurantsActivity extends AppCompatActivity {
         Button btn_rest = findViewById(R.id.btn_restaurant);
         Button btn_prof = findViewById(R.id.btn_profil);
         ImageButton btn_add = findViewById(R.id.add_rest);
+        ImageButton btn_update = findViewById(R.id.setting_rest);
 
         btn_rest.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,6 +99,7 @@ public class RestaurantsActivity extends AppCompatActivity {
             }
         });
 
+        btn_update.setOnClickListener(view -> startActivity(new Intent(RestaurantsActivity.this, SettingRestActivity.class)));
         btn_add.setOnClickListener(view -> startActivity(new Intent(RestaurantsActivity.this, AddRestActivity.class)));
         if(state){
             btn_prof.setOnClickListener(view -> startActivity(new Intent(RestaurantsActivity.this, Profil.class)));

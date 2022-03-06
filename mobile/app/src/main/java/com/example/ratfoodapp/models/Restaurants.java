@@ -14,7 +14,7 @@ public class Restaurants {
         this.description = description;
         this.localisation = localization;
         this.phone_number = phone_number;
-        this.hour = hour;
+        this.hour = hours;
         this.website = website;
         this.grade = grade;
         this.image = image;

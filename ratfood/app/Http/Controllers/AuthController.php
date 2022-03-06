@@ -109,6 +109,44 @@ class AuthController extends Controller
             'expires_in' => auth()->factory()->getTTL() * 60
         ]);
     }
+
+    protected function updateUser($id, Request $request) {
+        $req = Validator::make($request->all(), [
+            'username' => 'required|string|unique:users',
+            'firstname' => 'required|string',
+            'name' => 'required|string|between:2,100',
+            'age' => 'required|integer'
+        ]);
+
+        if ($req->fails()) {
+            return response()->json($req->errors()->toJson(), 400);
+        }
+
+        User::where("_id", "=", $id)->update([
+            'username' => $request["username"],
+            'firstname' => $request["firstname"],
+            'name' => $request["name"],
+            'age' => $request["age"]
+        ]);
+
+        return response()->json([
+            'message' => 'User udpate',
+        ], 200);
+    }
+
+    protected function deleteUser($id) {
+        $user = User::where("_id", '=', $id)->delete();
+
+        if ($user) {
+            return response()->json([
+                'message' => 'Menu deleted',
+            ], 200);
+        } else {
+            return response()->json([
+                'message' => 'Menu do not exist',
+            ], 400);
+        }
+    }
     /**
      * Get the guard to be used during authentication.
      *

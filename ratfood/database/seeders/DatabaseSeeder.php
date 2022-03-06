@@ -18,6 +18,9 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(15)->create();
 
+        /**
+         * Seeders for restaurants
+         */
         Restaurant::create([
             "name" => "O souvennirs de Theoss",
             "description" => "Un restoran servend de nombreu plas issu du Theoss. Pris acessible et plas pour toute la famill !",
@@ -31,7 +34,7 @@ class DatabaseSeeder extends Seeder
 
         Restaurant::create([
             "name" => "RatKing",
-            "description" => "Un fastfood incontournable issu des Etat Unino, prix les plus bas comparé à la concurrence.",
+            "description" => "Un fastfood incontournable issue des Etat Unino, prix les plus bas comparé à la concurrence.",
             "grade" => 4.1,
             "localisation" => "11 Av. du Président Salvador Allende, 94400 Vitry-sur-Seine",
             "phone_number" => "01_46_23_57_98",
@@ -42,7 +45,7 @@ class DatabaseSeeder extends Seeder
 
         Restaurant::create([
             "name" => "Délices des îles",
-            "description" => "Des délices variées des îles Julles, le contrast entre tradition et innovation garantiront le plaisir des petits et grands !",
+            "description" => "Des délices variés des îles Julles, le contrast entre tradition et innovation garantira le plaisir des petits et des grands !",
             "grade" => 4.6,
             "localisation" => "15 Parvis De La Défense, Pl. du Dôme Niv 3, 92800 Puteaux",
             "phone_number" => "01.45.43.18.76",
@@ -75,7 +78,7 @@ class DatabaseSeeder extends Seeder
 
         Restaurant::create([
             "name" => "Les trois baguettes",
-            "description" => "Les trois baguettes propose des plats issus de la culture Quentonaise. Entre divers plats, sauces et brochettes, ce restaurant est apprécie du grand public !",
+            "description" => "Les trois baguettes propose des plats issues de la culture Quentonaise. Entre divers plats, sauces et brochettes, ce restaurant est apprécie du grand public !",
             "grade" => 4.1,
             "localisation" => "41 Rue Marat, 94200 Ivry-sur-Seine",
             "phone_number" => "01.23.28.91.55",

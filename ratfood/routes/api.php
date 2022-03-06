@@ -22,6 +22,8 @@ Route::group([
     Route::post('/register', [AuthController::class, 'register']);
     Route::post('/auth', [AuthController::class, 'login']);
     Route::get('/users', [AuthController::class, 'allUsers']);
+    Route::put('/user/{id}', [AuthController::class, 'updateUser']);
+    Route::delete('/user/{id}', [AuthController::class, 'deleteUser']);
     Route::post('/sign_out', [AuthController::class, 'sign_out']);
     Route::get('/restaurants', [RestController::class, 'allRestaurants']);
     Route::post('/restaurant', [RestController::class, 'createRestaurant']);

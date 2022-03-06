@@ -41,7 +41,7 @@
             android:text="@string/footer_l_button_text" />
     </RelativeLayout>
 
-    <FrameLayout
+    <LinearLayout
         android:id="@+id/header"
         android:layout_width="413dp"
         android:layout_height="55dp"
@@ -51,7 +51,22 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0" >
+
+        <ImageButton
+            android:id="@+id/add_rest"
+            android:layout_width="62dp"
+            android:layout_height="match_parent"
+            android:background="@color/purple_search_bar"
+            app:srcCompat="@drawable/logo_add_foreground" />
+
+        <ImageButton
+            android:id="@+id/setting_rest"
+            android:layout_width="62dp"
+            android:layout_height="match_parent"
+            android:background="@color/purple_search_bar"
+            app:srcCompat="@drawable/logo_setting_foreground" />
+    </LinearLayout>
 
 
     <androidx.recyclerview.widget.RecyclerView

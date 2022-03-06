@@ -92,12 +92,7 @@ public class RestaurantsActivity extends AppCompatActivity {
         ImageButton btn_add = findViewById(R.id.add_rest);
         ImageButton btn_update = findViewById(R.id.setting_rest);
 
-        btn_rest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(RestaurantsActivity.this, RestaurantsActivity.class));
-            }
-        });
+        btn_rest.setOnClickListener(view -> startActivity(new Intent(RestaurantsActivity.this, RestaurantsActivity.class)));
 
         btn_update.setOnClickListener(view -> startActivity(new Intent(RestaurantsActivity.this, SettingRestActivity.class)));
         btn_add.setOnClickListener(view -> startActivity(new Intent(RestaurantsActivity.this, AddRestActivity.class)));

@@ -42,6 +42,12 @@ class Menu extends Model
             case 6:
                 $Rest = Restaurant::where('name', '=', 'Les trois baguettes')->first();
                 break;
+            case 7:
+                $Rest = Restaurant::where('name', '=', 'Au petit grain de sable')->first();
+                break;
+            case 8:
+                $Rest = Restaurant::where('name', '=', 'Boum-appétit')->first();
+                break;     
         }
         return $Rest["_id"];
     }

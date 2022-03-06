@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                         String getstatus = obj.getString("user");
                         user = createUser(getstatus);
 
-                        Toast.makeText(getApplicationContext(), getstatus, Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"Connected !", Toast.LENGTH_LONG).show();
 
                     } catch (Exception e) {
                         e.printStackTrace();

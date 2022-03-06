@@ -22,9 +22,10 @@ public interface RestaurantsApi {
     @FormUrlEncoded
     @POST("api/restaurant")
     Call<ResponseBody> createRest(@Field("name") String name, @Field("description")String description,
-                                  @Field("grade")float grade, @Field("localization")String localisation,
+                                  @Field("grade")float grade, @Field("localization")String localization,
                                   @Field("phone_number")String phone_number, @Field("website")String website,
-                                  @Field("hour")String hours);
+                                  @Field("hours")String hours,
+                                  @Field("image")String image);
 
     @FormUrlEncoded
     @PUT("api/restaurant/{id}")

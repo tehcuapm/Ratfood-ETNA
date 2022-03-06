@@ -56,7 +56,7 @@ class RestController extends Controller
             return response()->json($req->errors()->toJson(), 400);
         }
 
-        Restaurant::where("_id", '=', $id)->update([
+        $updates = Restaurant::where("_id", '=', $id)->update([
             "name" => $request['name'],
             "description" => $request['description'],
             "grade" => $request['grade'],
@@ -67,9 +67,15 @@ class RestController extends Controller
             "hours" => $request['hours'],
         ]);
 
+        if($updates)
+        {
+            return response()->json([
+                'message' => 'Rest changed',
+            ], 200);
+        }
         return response()->json([
-            'message' => 'Rest changed',
-        ], 200);
+            'message' => "Rest do not exist"
+        ], 400);
     }
 
     /**

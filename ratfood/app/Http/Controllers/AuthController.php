@@ -27,11 +27,11 @@ class AuthController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return response()->json($validator->errors(), 422);
+            return response()->json($validator->errors(), 400);
         }
 
         if (!$token = auth()->attempt($validator->validated())) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+            return response()->json(['error' => 'Unauthorized'], 400);
         }
         $user = auth()->user();
         return $this->respondWithToken($token,$user);
@@ -112,7 +112,7 @@ class AuthController extends Controller
 
     protected function updateUser($id, Request $request) {
         $req = Validator::make($request->all(), [
-            'username' => 'required|string|unique:users',
+            'username' => 'required|string',
             'firstname' => 'required|string',
             'name' => 'required|string|between:2,100',
             'age' => 'required|integer'

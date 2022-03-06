@@ -7,7 +7,9 @@
         <entry key="app/src/main/res/drawable/bulle_drawable.xml" value="0.294" />
         <entry key="app/src/main/res/drawable/footer_border_top.xml" value="0.294" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.294" />
-        <entry key="app/src/main/res/drawable/logo_setting_foreground.xml" value="0.3235" />
+        <entry key="app/src/main/res/drawable/logo_profile_background.xml" value="0.19" />
+        <entry key="app/src/main/res/drawable/logo_search_background.xml" value="0.19" />
+        <entry key="app/src/main/res/drawable/logo_search_foreground.xml" value="0.19" />
         <entry key="app/src/main/res/drawable/profil_information_layout.xml" value="0.294" />
         <entry key="app/src/main/res/layout/activity_add_rest.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_change.xml" value="0.276268115942029" />
@@ -33,8 +35,10 @@
         <entry key="app/src/main/res/layout/item_menu.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_setting.xml" value="0.245018115942029" />
         <entry key="app/src/main/res/layout/layouttest.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/profil_layout.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/profil_layout.xml" value="0.33" />
         <entry key="app/src/main/res/layout/restaurants_layout.xml" value="0.40993788819875776" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.19" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.19" />
       </map>
     </option>
   </component>

@@ -25,5 +25,5 @@ cd docker && chmod +x init.sh && ./init.sh && chmod +x smartFix.sh && ./smartFix
 
 ### Before doing unit tests, please do : 
 ```
-cd docker && docker exec rat_php php artisan migrate:fresh && docker exec rat_php php artisan db:seed
+cd docker && docker exec rat_php php artisan migrate:fresh --seed
 ```

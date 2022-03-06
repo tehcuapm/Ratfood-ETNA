@@ -1,7 +1,10 @@
 package com.example.ratfoodapp.views;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,10 +18,13 @@ import com.bumptech.glide.Glide;
 import com.example.ratfoodapp.R;
 import com.example.ratfoodapp.api.ApiBuilder;
 import com.example.ratfoodapp.api.MenusApi;
+import com.example.ratfoodapp.api.RestaurantsApi;
 import com.example.ratfoodapp.models.Menus;
 
+import java.io.IOException;
 import java.util.List;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -26,12 +32,23 @@ import retrofit2.Response;
 public class DetailsActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RequestQueue requestQueue;
-
+    private String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+
+        Button del_btn = findViewById(R.id.del_btn);
+        try{
+            this.user = LoginActivity.getInstance().giveUser();
+            del_btn.setOnClickListener(view -> delRest());
+            del_btn.setVisibility(View.VISIBLE);
+
+        }catch(Exception e){
+            del_btn.setVisibility(View.GONE);
+        }
+
         recyclerView = findViewById(R.id.menus_view);
 
         ImageView imageView = findViewById(R.id.poster_image);
@@ -69,7 +86,34 @@ public class DetailsActivity extends AppCompatActivity {
         requestQueue = VolleySingleton.getmInstance(this).getRequestQueue();
 
     }
+    public void delRest(){
+        Bundle bundle = getIntent().getExtras();
 
+        String id_rest = bundle.getString("_id");
+        RestaurantsApi restaurantsApi = ApiBuilder.builderAPI().create(RestaurantsApi.class);
+        Call<ResponseBody> call = restaurantsApi.deleteRest(id_rest);
+
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+                if(response.isSuccessful()) {
+                    try {
+                        String result = response.body().string();
+                        Toast.makeText(getApplicationContext(), "Restaurant deleted", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(DetailsActivity.this, RestaurantsActivity.class));
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "FAIL" + t, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
     public void callRest() {
         Bundle bundle = getIntent().getExtras();
 

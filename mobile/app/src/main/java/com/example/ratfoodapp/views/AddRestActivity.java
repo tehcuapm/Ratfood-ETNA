@@ -34,8 +34,8 @@ import retrofit2.Response;
 
 
 public class AddRestActivity extends AppCompatActivity {
-    EditText input_name, input_description, input_grade, input_localisation, input_phone_number,
-            input_website, input_hours, input_phone;
+    EditText input_name, input_description, input_grade, input_localisation,
+            input_website, input_hours, input_phone,input_image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,6 @@ public class AddRestActivity extends AppCompatActivity {
 
         setInput();
 
-        String test[] = getInput();
         Button btn_create = findViewById(R.id.create_btn);
         btn_create.setOnClickListener(view -> {
            checkCreate(getInput());
@@ -59,29 +58,30 @@ public class AddRestActivity extends AppCompatActivity {
         input_website = findViewById(R.id.input_website);
         input_hours = findViewById(R.id.input_hours);
         input_phone = findViewById(R.id.input_phone_number);
+        input_image = findViewById(R.id.input_image);
     }
 
     private String[] getInput(){
         String name = input_name.getText().toString();
         String description = input_description.getText().toString();
         String grade = input_grade.getText().toString();
-        String localisation = input_localisation.getText().toString();
+        String localization = input_localisation.getText().toString();
         String website = input_website.getText().toString();
         String hours = input_hours.getText().toString();
-        String phone = input_phone.getText().toString();
-        String arr[] = {name, description, grade, localisation, website,
-        hours, phone};
-        return arr;
+        String phone_number = input_phone.getText().toString();
+        String image = input_image.getText().toString();
+        return new String[]{name, description, grade, localization, website,
+        hours, phone_number,image};
     }
 
-    private void checkCreate(String inputs[]) {
+    private void checkCreate(String[] inputs) {
         if (inputs[2].equals("")){
             Toast.makeText(getApplicationContext(), "FAIL", Toast.LENGTH_SHORT).show();
         }
         else {
             Call<ResponseBody> call = ApiBuilder.builderAPI().create(RestaurantsApi.class)
                     .createRest(inputs[0], inputs[1], Float.parseFloat(inputs[2]),
-                            inputs[3], inputs[4], inputs[5], inputs[6]);
+                            inputs[3], inputs[4], inputs[5], inputs[6],inputs[7]);
             call.enqueue(new Callback<ResponseBody>() {
                 @Override
                 public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {

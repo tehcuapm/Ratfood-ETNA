@@ -86,6 +86,48 @@ class DatabaseSeeder extends Seeder
             "website" => "Les_3_baguettes.com",
             "hour" => "12h30-23h30"
         ]);
+        Restaurant::create([
+            "name" => "Au petit grain de sable",
+            "description" => "Ce restaurant oriental vous propose des couscous atypiques d'Ivry",
+            "grade" => 6.9,
+            "localisation" => "41 Rue Marat, 94200 Ivry-sur-Seine",
+            "phone_number" => "01.23.28.91.55",
+            "image" => "https://cdn.discordapp.com/attachments/898208920504520734/899928938552385556/unknown.png",
+            "website" => "Miam_le_couscous.al",
+            "hour" => "12h30-00h00"
+        ]);
+        Restaurant::create([
+            "name" => "Boum-appétit",
+            "description" => "Ce restaurant Agaschtan vous propose des plats explosifs ",
+            "grade" => 2.9,
+            "localisation" => "41 Rue Marat, 94200 Ivry-sur-Seine",
+            "phone_number" => "01.23.28.91.55",
+            "image" => "https://cdn.discordapp.com/attachments/949260272869208104/950103838214467645/iu.png",
+            "website" => "Crotte.fr",
+            "hour" => "12h30-00h00"
+        ]);
+        Restaurant::create([
+            "name" => "Taco-land",
+            "description" => "Ce restaurant Matthystan vous offre des tacos bien gras",
+            "grade" => 6.2,
+            "localisation" => "41 Rue Marat, 94200 Ivry-sur-Seine",
+            "phone_number" => "06.23.28.91.55",
+            "image" => "https://cdn.discordapp.com/attachments/898208920504520734/899929272867770398/unknown.png",
+            "website" => "Crotte.fr",
+            "hour" => "12h30-00h00"
+        ]);
+        Restaurant::create([
+            "name" => "Jerome's Islands",
+            "description" => "Ces petits food-trucks vous raviront l'estomac",
+            "grade" => 8.5,
+            "localisation" => "41 Rue Marat, 94200 Ivry-sur-Seine",
+            "phone_number" => "06.23.28.91.55",
+            "image" => "https://cdn.discordapp.com/attachments/898208920504520734/899931067459436544/unknown.png",
+            "website" => "Clemenssin.fr",
+            "hour" => "12h30-00h00"
+        ]);
+        
+
 
 
         /**
@@ -142,9 +184,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Menu::create([
-            "name" => "Menu ketchup aux pâtes",
-            "description" => "Comme de nombreux autres recettes, c'est parfois en faisant des erreurs que l'on innove !",
-            "price" => 3.9,
+     
             "id_rest" => Menu::getIdRest(3)
         ]);
 
@@ -189,5 +229,19 @@ class DatabaseSeeder extends Seeder
             "price" => 9.5,
             "id_rest" => Menu::getIdRest(6)
         ]);
+        Menu::create([
+            "name" => "Menu Couscous Jambon",
+            "description" => "Un plat remit au goût du jour, spécialité d'Ivry",
+            "price" => 16.9,
+            "id_rest" => Menu::getIdRest(7)
+        ]);
+
+        Menu::create([
+            "name" => "Menu Tajine Saucisse",
+            "description" => "Célèbre tajine, qui glisse tout seul !",
+            "price" => 26.9,
+            "id_rest" => Menu::getIdRest(7)
+        ]);
+       
     }
 }

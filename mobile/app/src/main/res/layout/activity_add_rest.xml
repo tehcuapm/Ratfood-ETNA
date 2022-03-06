@@ -97,6 +97,18 @@
                 android:hint="Description"/>
 
         </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+
+            <EditText
+                android:id="@+id/input_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textMultiLine"
+                android:hint="Image link"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
         <Button
             android:id="@+id/create_btn"
             android:layout_width="match_parent"

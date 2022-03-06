@@ -30,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     private static volatile LoginActivity instance = null;
     EditText input_username, input_password;
     Button btn_login;
+    private String userZ;
     public Users user;
 
     @Override
@@ -37,7 +38,12 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.instance = this;
         setContentView(R.layout.activity_login);
-        setElements();
+        try{
+            this.userZ = LoginActivity.getInstance().giveUser();
+            setElements(true);
+        }catch(Exception e){
+            setElements(false);
+        }
 
     }
 
@@ -72,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
-    private void setElements() {
+    private void setElements(boolean state) {
         input_username = findViewById(R.id.input_username);
         input_password = findViewById(R.id.input_password);
         btn_login = findViewById(R.id.login_btn);
@@ -80,32 +86,16 @@ public class LoginActivity extends AppCompatActivity {
         Button btn_rest = findViewById(R.id.btn_restaurant);
         Button btn_prof = findViewById(R.id.btn_profil);
 
-        btn_rest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, RestaurantsActivity.class));
-            }
-        });
+        if(state){
+            btn_prof.setOnClickListener(view -> startActivity(new Intent(LoginActivity.this, Profil.class)));
+        } else{btn_prof.setOnClickListener(view -> startActivity(new Intent(LoginActivity.this, LoginActivity.class)));
+            btn_prof.setText("LOGIN");}
 
-        btn_prof.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, Profil.class));
-            }
-        });
+        btn_rest.setOnClickListener(view -> startActivity(new Intent(LoginActivity.this, RestaurantsActivity.class)));
 
-        btn_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                LoginCheck(input_username.getText().toString(), input_password.getText().toString());
-            }
-        });
-        btn_register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
-            }
-        });
+
+        btn_login.setOnClickListener(v -> LoginCheck(input_username.getText().toString(), input_password.getText().toString()));
+        btn_register.setOnClickListener(view -> startActivity(new Intent(LoginActivity.this, RegisterActivity.class)));
     }
 
         public Users createUser(String object){

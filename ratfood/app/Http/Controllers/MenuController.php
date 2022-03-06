@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Menu;
+use App\Models\Restaurant;
 use Validator;
 
 class MenuController extends Controller
@@ -21,7 +22,14 @@ class MenuController extends Controller
      */
     public function createMenu(Request $request, $id)
     {
-        dd(Menu::getIdRest(1));
+
+        $rest = Restaurant::all()->where("_id", "=", $id)->first();
+        if(!$rest)
+        {
+            return response()->json([
+                "message" => "Rest do not exist"
+            ], 400);
+        }
 
         $req = Validator::make($request->all(), [
             'name' => 'required|string',
@@ -102,4 +110,5 @@ class MenuController extends Controller
             ], 400);
         }
     }
+
 }

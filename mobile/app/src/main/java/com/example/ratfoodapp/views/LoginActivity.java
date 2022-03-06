@@ -19,6 +19,7 @@ import com.example.ratfoodapp.models.Users;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
+import java.util.HashMap;
 import java.util.List;
 
 import okhttp3.ResponseBody;
@@ -120,6 +121,9 @@ public class LoginActivity extends AppCompatActivity {
     }
     public String giveUser(){
         return user.getUsername();
+    }
+    public HashMap<String, String> giveAllUser(){
+        return user.getUserInfos();
     }
 
 }

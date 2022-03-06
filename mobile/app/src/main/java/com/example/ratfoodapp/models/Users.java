@@ -24,16 +24,15 @@ public class Users {
         return this.username;
     }
 
-    public HashMap<String, String> getUser()
+    public HashMap<String, String> getUserInfos()
     {
         String ageStr = String.valueOf(this.age);
-        HashMap<String, String> map = new HashMap<String, String>();
+        HashMap<String,String> map = new HashMap<>();
 
         map.put("username", this.username);
         map.put("firstname", this.firstname);
         map.put("name", this.name);
         map.put("age", ageStr);
-        map.put("id", this._id);
 
         return map;
 
